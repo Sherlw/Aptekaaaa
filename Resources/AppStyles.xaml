@@ -1,0 +1,71 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <!-- 🎨 Цветовая палитра -->
+    <Color x:Key="PrimaryColor">#A78BFA</Color>
+    <!-- Фиолетовый -->
+    <Color x:Key="SecondaryColor">#E0D4FD</Color>
+    <!-- Светлый фиолетовый -->
+    <Color x:Key="LightBackground">#F9F9FF</Color>
+    <!-- Основной фон -->
+    <Color x:Key="DarkText">#333333</Color>
+    <!-- Цвет текста -->
+    <Color x:Key="SoftBorder">#E6E6F0</Color>
+
+    <!-- 🔧 Кисти -->
+    <SolidColorBrush x:Key="PrimaryBrush" Color="{StaticResource PrimaryColor}" />
+    <SolidColorBrush x:Key="SecondaryBrush" Color="{StaticResource SecondaryColor}" />
+    <SolidColorBrush x:Key="BackgroundBrush" Color="{StaticResource LightBackground}" />
+    <SolidColorBrush x:Key="TextBrush" Color="{StaticResource DarkText}" />
+    <SolidColorBrush x:Key="BorderBrushSoft" Color="{StaticResource SoftBorder}" />
+
+    <!-- 🌐 Общий стиль для всех TextBox -->
+    <Style TargetType="TextBox">
+        <Setter Property="FontFamily" Value="Segoe UI"/>
+        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="Padding" Value="8"/>
+        <Setter Property="Margin" Value="0,4"/>
+        <Setter Property="BorderBrush" Value="{StaticResource BorderBrushSoft}"/>
+        <Setter Property="Background" Value="White"/>
+    </Style>
+
+    <!-- 🔒 Для PasswordBox -->
+    <Style TargetType="PasswordBox">
+        <Setter Property="FontFamily" Value="Segoe UI"/>
+        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="Padding" Value="8"/>
+        <Setter Property="Margin" Value="0,4"/>
+        <Setter Property="BorderBrush" Value="{StaticResource BorderBrushSoft}"/>
+        <Setter Property="Background" Value="White"/>
+    </Style>
+
+    <!-- 🖱 Кнопки -->
+    <Style TargetType="Button">
+        <Setter Property="FontFamily" Value="Segoe UI"/>
+        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="FontWeight" Value="SemiBold"/>
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="Background" Value="{StaticResource PrimaryBrush}"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="Height" Value="38"/>
+        <Setter Property="Margin" Value="0,10,0,0"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="{TemplateBinding Background}"
+                            CornerRadius="8">
+                        <ContentPresenter HorizontalAlignment="Center"
+                                          VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!-- 🧾 TextBlock -->
+    <Style TargetType="TextBlock">
+        <Setter Property="FontFamily" Value="Segoe UI"/>
+        <Setter Property="Foreground" Value="{StaticResource TextBrush}"/>
+    </Style>
+</ResourceDictionary>

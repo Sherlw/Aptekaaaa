@@ -1,0 +1,45 @@
+﻿<Window x:Class="Aptekaaaa.MainMenu"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Aptekaaaa"
+        mc:Ignorable="d"
+        Title="MainMenu" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <!-- 🔷 Боковая панель -->
+        <StackPanel Background="{StaticResource PrimaryBrush}"
+                    Grid.Column="0"             
+                    Orientation="Vertical">
+
+            <TextBlock Text="Аптека" Foreground="GreenYellow"
+                       FontSize="30"
+                       FontWeight="Bold"
+                       HorizontalAlignment="Center"
+                       Margin="0,10,0,10"/>
+
+            <Button Content="Товары" Click="BtnProducts_Click"/>
+            <Button Content="Заказы" Click="BtnOrders_Click"/>
+            <Button Content="Клиенты" Click="BtnCustomers_Click"/>
+            <Button Content="Поставки" Click="BtnSuppliers_Click"/>
+            <Button Content="Сотрудники" Click="BtnEmployees_Click"/>
+            <Button Content="Отчёты" Click="BtnReports_Click"/>
+            <Button Content="Выход" Click="BtnLogout_Click" Margin="0,20,0,0"/>
+        </StackPanel>
+
+        <!-- 🧾 Рабочая область -->
+        <Grid Grid.Column="1" Name="MainContent" Background="White">
+            <TextBlock Text="Добро пожаловать!"
+                       FontSize="24"
+                       FontWeight="SemiBold"
+                       Foreground="{StaticResource PrimaryBrush}"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center"/>
+        </Grid>
+    </Grid>
+</Window>

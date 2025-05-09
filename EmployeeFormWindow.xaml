@@ -1,0 +1,37 @@
+﻿<Window x:Class="Aptekaaaa.EmployeeFormWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Aptekaaaa"
+        mc:Ignorable="d" Background="{StaticResource BackgroundBrush}"
+        Title="EmployeeFormWindow" Height="450" Width="800">
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel>
+            <TextBlock FontSize="15" Text="Имя"/>
+            <TextBox x:Name="txtFirstName"/>
+
+            <TextBlock FontSize="15" Text="Фамилия"/>
+            <TextBox x:Name="txtLastName"/>
+
+            <TextBlock FontSize="15" Text="Должность"/>
+            <TextBox x:Name="txtPosition"/>
+
+            <TextBlock FontSize="15" Text="Логин"/>
+            <TextBox x:Name="txtLogin"/>
+
+            <TextBlock FontSize="15" Text="Пароль"/>
+            <PasswordBox x:Name="txtPassword"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,20,0,0">
+            <Button Content="Сохранить" Margin="10,0,0,0" Width="100" Click="BtnSave_Click"/>
+            <Button Content="Отмена" Width="80" Margin="10,0,0,0" Click="BtnCancel_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>

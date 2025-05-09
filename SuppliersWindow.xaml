@@ -1,0 +1,43 @@
+﻿<Window x:Class="Aptekaaaa.SuppliersWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Aptekaaaa"
+        mc:Ignorable="d" Background="{StaticResource BackgroundBrush}"
+        Title="SuppliersWindow" Height="450" Width="800">
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <!-- 🔍 Поиск -->
+        <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+            <TextBox x:Name="txtSearch" Width="200" Text="Поиск..."/>
+            <Button Content="Обновить" Margin="10,0,0,0" Click="BtnRefresh_Click"/>
+        </StackPanel>
+
+        <!-- 📋 Таблица -->
+        <DataGrid x:Name="dgSuppliers"
+                  Grid.Row="1"
+                  AutoGenerateColumns="False"
+                  IsReadOnly="True"
+                  SelectionMode="Single"
+                  Margin="0,0,0,10">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Binding="{Binding SupplierID}" Width="50"/>
+                <DataGridTextColumn Header="Название" Binding="{Binding Name}" Width="200"/>
+                <DataGridTextColumn Header="Контактная информация" Binding="{Binding ContactInformation}" Width="*"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <!-- ➕➖ Кнопки -->
+        <StackPanel Orientation="Horizontal" Grid.Row="2" HorizontalAlignment="Right">
+            <Button Content="Добавить" Width="100" Click="BtnAdd_Click"/>
+            <Button Content="Редактировать" Width="120" Margin="10,0,0,0" Click="BtnEdit_Click"/>
+            <Button Content="Удалить" Width="100" Margin="10,0,0,0" Click="BtnDelete_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>
