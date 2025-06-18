@@ -29,7 +29,7 @@
 
         <!-- 🔘 Управление -->
         <StackPanel Orientation="Horizontal" Grid.Row="1" HorizontalAlignment="Right">
-            <Button Content="Посмотреть" Width="120" Click="BtnView_Click"/>
+            <Button Content="Посмотреть" Width="120" Margin="10,0,0,0" Click="BtnView_Click"/>
             <Button Content="Обновить" Width="100" Margin="10,0,0,0" Click="BtnRefresh_Click"/>
         </StackPanel>
     </Grid>

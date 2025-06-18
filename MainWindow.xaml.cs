@@ -31,7 +31,7 @@ namespace Aptekaaaa
             lblStatus.Text = string.Empty;
 
             string login = txtLogin.Text.Trim();
-            string password = txtPassword.Password;      // хранится в БД как хеш — см. примечание
+            string password = txtPassword.Password;
 
             if (string.IsNullOrWhiteSpace(login) || string.IsNullOrWhiteSpace(password))
             {
@@ -44,8 +44,7 @@ namespace Aptekaaaa
             {
                 using var db = new PharmacyDBEntities();
 
-                // NB: в учебном примере пароль хранится как открытый текст.
-                //     В реальном приложении используйте хеш (BCrypt, PBKDF2 и т.п.).
+               
                 var user = db.Employees
                                    .FirstOrDefault(u => u.Login == login &&
                                                              u.Password == password);
@@ -57,8 +56,9 @@ namespace Aptekaaaa
                     return;
                 }
 
-                // Авторизован ‒ открываем главное окно
-                var main = new MainMenu();  // передаём объект сотрудника при необходимости ролей
+                MessageBox.Show("Вы авторизованы:" + user.Position);
+               
+                var main = new MainMenu();  
                 main.Show();
                 Close();
             }
